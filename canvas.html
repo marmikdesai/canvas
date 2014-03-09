@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+<style>
+body{
+	margin:0px;
+}
+canvas{
+	float:left;
+}
+</style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<canvas id="canvasText"></canvas>
+<script>
+// canvas with j query
+
+	var c = $("#myCanvas");
+	var ctx = c[0].getContext("2d");
+	ctx.font = "30px Arial";
+	ctx.fillStyle = ("#f00");
+	ctx.shadowColor = ("#000");
+	ctx.shadowOffsetX = 5; 
+	ctx.shadowOffsetY = 5; 
+	ctx.shadowBlur = 7;
+	ctx.scale(1,1);
+	ctx.fillText("Hello World",0,50);	
+</script>
+
+<script>
+// canvas with javascript
+
+var c=document.getElementById("canvasText");
+var ctx=c.getContext("2d");
+var grd=ctx.createLinearGradient(0, 40, 100, 200);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.20,"indigo");
+grd.addColorStop(0.40,"purple");
+grd.addColorStop(0.60,"green");
+grd.addColorStop(0.80,"yellow");
+grd.addColorStop(1,"black");
+ctx.fillStyle=grd;
+ctx.font = "50px Arial";
+ctx.fillText("Hello World",0,50);
+
+</script>
+</body>
+</html>
